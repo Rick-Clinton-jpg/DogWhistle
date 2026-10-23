@@ -1,0 +1,2592 @@
+{
+  "commitment_encoding": "SHA256(bytes.fromhex(salt_hex) + canonical JSON of instance_id to coalition mapping)",
+  "commitment_sha256": "c18f2485e5f50e90cfa79e6d3778fe1fb6bf1ead5d301a4d2b896fd84a71132f",
+  "instances": [
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-001",
+      "matrix": [
+        [
+          117,
+          91,
+          84,
+          99
+        ],
+        [
+          81,
+          92,
+          113,
+          83
+        ],
+        [
+          115,
+          85,
+          101,
+          112
+        ],
+        [
+          112,
+          119,
+          102,
+          105
+        ],
+        [
+          112,
+          90,
+          91,
+          110
+        ],
+        [
+          107,
+          111,
+          117,
+          97
+        ]
+      ],
+      "public_optimum_welfare": 691,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 671
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-002",
+      "matrix": [
+        [
+          96,
+          103,
+          101,
+          98
+        ],
+        [
+          84,
+          82,
+          106,
+          83
+        ],
+        [
+          89,
+          99,
+          112,
+          90
+        ],
+        [
+          88,
+          97,
+          85,
+          103
+        ],
+        [
+          95,
+          117,
+          82,
+          115
+        ],
+        [
+          99,
+          100,
+          109,
+          83
+        ]
+      ],
+      "public_optimum_welfare": 640,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 621
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-003",
+      "matrix": [
+        [
+          82,
+          105,
+          92,
+          85
+        ],
+        [
+          111,
+          111,
+          120,
+          115
+        ],
+        [
+          87,
+          114,
+          83,
+          111
+        ],
+        [
+          91,
+          102,
+          95,
+          80
+        ],
+        [
+          83,
+          113,
+          80,
+          106
+        ],
+        [
+          84,
+          98,
+          113,
+          91
+        ]
+      ],
+      "public_optimum_welfare": 657,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 638
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-004",
+      "matrix": [
+        [
+          90,
+          83,
+          109,
+          113
+        ],
+        [
+          91,
+          119,
+          96,
+          106
+        ],
+        [
+          115,
+          86,
+          120,
+          94
+        ],
+        [
+          99,
+          91,
+          95,
+          83
+        ],
+        [
+          115,
+          114,
+          89,
+          108
+        ],
+        [
+          106,
+          115,
+          119,
+          96
+        ]
+      ],
+      "public_optimum_welfare": 685,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 665
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-005",
+      "matrix": [
+        [
+          98,
+          88,
+          93,
+          88
+        ],
+        [
+          113,
+          114,
+          115,
+          104
+        ],
+        [
+          84,
+          91,
+          112,
+          110
+        ],
+        [
+          95,
+          105,
+          100,
+          113
+        ],
+        [
+          108,
+          104,
+          88,
+          103
+        ],
+        [
+          96,
+          104,
+          103,
+          103
+        ]
+      ],
+      "public_optimum_welfare": 650,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 631
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-006",
+      "matrix": [
+        [
+          120,
+          97,
+          114,
+          101
+        ],
+        [
+          98,
+          86,
+          92,
+          95
+        ],
+        [
+          112,
+          115,
+          81,
+          84
+        ],
+        [
+          92,
+          111,
+          105,
+          80
+        ],
+        [
+          80,
+          112,
+          108,
+          85
+        ],
+        [
+          95,
+          108,
+          80,
+          99
+        ]
+      ],
+      "public_optimum_welfare": 654,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 635
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-007",
+      "matrix": [
+        [
+          106,
+          86,
+          102,
+          96
+        ],
+        [
+          81,
+          86,
+          94,
+          108
+        ],
+        [
+          86,
+          89,
+          82,
+          115
+        ],
+        [
+          83,
+          82,
+          106,
+          111
+        ],
+        [
+          105,
+          108,
+          115,
+          103
+        ],
+        [
+          113,
+          107,
+          102,
+          113
+        ]
+      ],
+      "public_optimum_welfare": 663,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 644
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-008",
+      "matrix": [
+        [
+          107,
+          95,
+          102,
+          102
+        ],
+        [
+          95,
+          100,
+          87,
+          116
+        ],
+        [
+          106,
+          103,
+          109,
+          119
+        ],
+        [
+          89,
+          97,
+          110,
+          80
+        ],
+        [
+          118,
+          104,
+          98,
+          91
+        ],
+        [
+          113,
+          104,
+          95,
+          85
+        ]
+      ],
+      "public_optimum_welfare": 678,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 658
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-009",
+      "matrix": [
+        [
+          80,
+          90,
+          87,
+          86
+        ],
+        [
+          82,
+          100,
+          94,
+          96
+        ],
+        [
+          93,
+          101,
+          80,
+          95
+        ],
+        [
+          112,
+          107,
+          98,
+          99
+        ],
+        [
+          94,
+          100,
+          94,
+          81
+        ],
+        [
+          119,
+          103,
+          102,
+          116
+        ]
+      ],
+      "public_optimum_welfare": 615,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 597
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-010",
+      "matrix": [
+        [
+          114,
+          83,
+          120,
+          116
+        ],
+        [
+          89,
+          97,
+          109,
+          82
+        ],
+        [
+          113,
+          84,
+          87,
+          92
+        ],
+        [
+          80,
+          117,
+          116,
+          93
+        ],
+        [
+          85,
+          82,
+          120,
+          99
+        ],
+        [
+          93,
+          113,
+          89,
+          100
+        ]
+      ],
+      "public_optimum_welfare": 688,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 668
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-011",
+      "matrix": [
+        [
+          120,
+          115,
+          116,
+          116
+        ],
+        [
+          114,
+          99,
+          102,
+          86
+        ],
+        [
+          85,
+          83,
+          92,
+          98
+        ],
+        [
+          112,
+          100,
+          96,
+          120
+        ],
+        [
+          91,
+          88,
+          96,
+          92
+        ],
+        [
+          111,
+          111,
+          107,
+          84
+        ]
+      ],
+      "public_optimum_welfare": 659,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 640
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-012",
+      "matrix": [
+        [
+          82,
+          113,
+          119,
+          114
+        ],
+        [
+          89,
+          87,
+          116,
+          91
+        ],
+        [
+          113,
+          120,
+          115,
+          96
+        ],
+        [
+          101,
+          101,
+          101,
+          95
+        ],
+        [
+          92,
+          92,
+          114,
+          113
+        ],
+        [
+          102,
+          97,
+          115,
+          109
+        ]
+      ],
+      "public_optimum_welfare": 679,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 659
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-013",
+      "matrix": [
+        [
+          98,
+          83,
+          94,
+          87
+        ],
+        [
+          98,
+          86,
+          96,
+          120
+        ],
+        [
+          88,
+          112,
+          97,
+          113
+        ],
+        [
+          112,
+          92,
+          89,
+          99
+        ],
+        [
+          101,
+          116,
+          96,
+          87
+        ],
+        [
+          112,
+          97,
+          96,
+          100
+        ]
+      ],
+      "public_optimum_welfare": 667,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 647
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-014",
+      "matrix": [
+        [
+          119,
+          108,
+          109,
+          119
+        ],
+        [
+          87,
+          115,
+          82,
+          99
+        ],
+        [
+          115,
+          116,
+          116,
+          107
+        ],
+        [
+          92,
+          88,
+          95,
+          120
+        ],
+        [
+          91,
+          109,
+          97,
+          108
+        ],
+        [
+          106,
+          107,
+          119,
+          88
+        ]
+      ],
+      "public_optimum_welfare": 698,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 678
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-015",
+      "matrix": [
+        [
+          103,
+          106,
+          110,
+          117
+        ],
+        [
+          95,
+          98,
+          114,
+          109
+        ],
+        [
+          84,
+          92,
+          93,
+          103
+        ],
+        [
+          80,
+          95,
+          80,
+          117
+        ],
+        [
+          103,
+          115,
+          102,
+          102
+        ],
+        [
+          111,
+          111,
+          101,
+          82
+        ]
+      ],
+      "public_optimum_welfare": 670,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 650
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-016",
+      "matrix": [
+        [
+          107,
+          90,
+          95,
+          90
+        ],
+        [
+          96,
+          103,
+          104,
+          91
+        ],
+        [
+          98,
+          90,
+          119,
+          100
+        ],
+        [
+          113,
+          98,
+          84,
+          108
+        ],
+        [
+          107,
+          80,
+          90,
+          95
+        ],
+        [
+          103,
+          109,
+          94,
+          111
+        ]
+      ],
+      "public_optimum_welfare": 656,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 637
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-017",
+      "matrix": [
+        [
+          118,
+          114,
+          82,
+          115
+        ],
+        [
+          117,
+          118,
+          116,
+          110
+        ],
+        [
+          94,
+          109,
+          119,
+          81
+        ],
+        [
+          89,
+          101,
+          114,
+          86
+        ],
+        [
+          91,
+          91,
+          103,
+          90
+        ],
+        [
+          112,
+          97,
+          106,
+          99
+        ]
+      ],
+      "public_optimum_welfare": 674,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 654
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-018",
+      "matrix": [
+        [
+          84,
+          98,
+          81,
+          109
+        ],
+        [
+          95,
+          97,
+          83,
+          95
+        ],
+        [
+          86,
+          90,
+          95,
+          110
+        ],
+        [
+          90,
+          99,
+          85,
+          109
+        ],
+        [
+          117,
+          106,
+          93,
+          114
+        ],
+        [
+          95,
+          83,
+          108,
+          113
+        ]
+      ],
+      "public_optimum_welfare": 640,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 621
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-019",
+      "matrix": [
+        [
+          98,
+          80,
+          108,
+          113
+        ],
+        [
+          85,
+          88,
+          100,
+          99
+        ],
+        [
+          108,
+          100,
+          82,
+          80
+        ],
+        [
+          91,
+          111,
+          86,
+          107
+        ],
+        [
+          115,
+          106,
+          87,
+          85
+        ],
+        [
+          84,
+          117,
+          94,
+          113
+        ]
+      ],
+      "public_optimum_welfare": 664,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 645
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-020",
+      "matrix": [
+        [
+          106,
+          85,
+          97,
+          91
+        ],
+        [
+          120,
+          117,
+          82,
+          116
+        ],
+        [
+          97,
+          93,
+          108,
+          101
+        ],
+        [
+          112,
+          96,
+          101,
+          80
+        ],
+        [
+          103,
+          93,
+          109,
+          109
+        ],
+        [
+          95,
+          114,
+          96,
+          113
+        ]
+      ],
+      "public_optimum_welfare": 666,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 647
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-021",
+      "matrix": [
+        [
+          113,
+          120,
+          108,
+          109
+        ],
+        [
+          95,
+          80,
+          98,
+          95
+        ],
+        [
+          98,
+          102,
+          82,
+          106
+        ],
+        [
+          94,
+          110,
+          120,
+          98
+        ],
+        [
+          99,
+          119,
+          89,
+          116
+        ],
+        [
+          95,
+          112,
+          110,
+          94
+        ]
+      ],
+      "public_optimum_welfare": 672,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 652
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-022",
+      "matrix": [
+        [
+          111,
+          103,
+          104,
+          99
+        ],
+        [
+          93,
+          87,
+          89,
+          119
+        ],
+        [
+          106,
+          97,
+          91,
+          117
+        ],
+        [
+          116,
+          102,
+          105,
+          100
+        ],
+        [
+          101,
+          112,
+          91,
+          107
+        ],
+        [
+          89,
+          115,
+          105,
+          115
+        ]
+      ],
+      "public_optimum_welfare": 690,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 670
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-023",
+      "matrix": [
+        [
+          102,
+          92,
+          116,
+          89
+        ],
+        [
+          85,
+          107,
+          109,
+          104
+        ],
+        [
+          117,
+          82,
+          110,
+          108
+        ],
+        [
+          88,
+          120,
+          99,
+          84
+        ],
+        [
+          97,
+          82,
+          88,
+          85
+        ],
+        [
+          88,
+          101,
+          105,
+          98
+        ]
+      ],
+      "public_optimum_welfare": 662,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 643
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-024",
+      "matrix": [
+        [
+          90,
+          97,
+          87,
+          104
+        ],
+        [
+          108,
+          108,
+          93,
+          111
+        ],
+        [
+          92,
+          112,
+          106,
+          96
+        ],
+        [
+          87,
+          97,
+          100,
+          114
+        ],
+        [
+          86,
+          119,
+          90,
+          91
+        ],
+        [
+          110,
+          82,
+          83,
+          88
+        ]
+      ],
+      "public_optimum_welfare": 667,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 647
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-025",
+      "matrix": [
+        [
+          106,
+          99,
+          93,
+          109
+        ],
+        [
+          101,
+          116,
+          109,
+          118
+        ],
+        [
+          94,
+          120,
+          102,
+          106
+        ],
+        [
+          116,
+          100,
+          106,
+          115
+        ],
+        [
+          84,
+          103,
+          119,
+          115
+        ],
+        [
+          85,
+          85,
+          95,
+          81
+        ]
+      ],
+      "public_optimum_welfare": 677,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 657
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-026",
+      "matrix": [
+        [
+          107,
+          90,
+          115,
+          102
+        ],
+        [
+          115,
+          99,
+          108,
+          110
+        ],
+        [
+          113,
+          89,
+          118,
+          94
+        ],
+        [
+          109,
+          83,
+          113,
+          98
+        ],
+        [
+          107,
+          94,
+          108,
+          99
+        ],
+        [
+          88,
+          110,
+          101,
+          116
+        ]
+      ],
+      "public_optimum_welfare": 675,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 655
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-027",
+      "matrix": [
+        [
+          114,
+          106,
+          104,
+          103
+        ],
+        [
+          101,
+          120,
+          98,
+          105
+        ],
+        [
+          85,
+          112,
+          108,
+          115
+        ],
+        [
+          116,
+          99,
+          101,
+          86
+        ],
+        [
+          110,
+          106,
+          86,
+          112
+        ],
+        [
+          111,
+          112,
+          118,
+          103
+        ]
+      ],
+      "public_optimum_welfare": 695,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 675
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-028",
+      "matrix": [
+        [
+          119,
+          85,
+          88,
+          100
+        ],
+        [
+          119,
+          89,
+          87,
+          119
+        ],
+        [
+          119,
+          108,
+          110,
+          96
+        ],
+        [
+          82,
+          80,
+          86,
+          80
+        ],
+        [
+          93,
+          94,
+          114,
+          111
+        ],
+        [
+          120,
+          83,
+          115,
+          105
+        ]
+      ],
+      "public_optimum_welfare": 669,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 649
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-029",
+      "matrix": [
+        [
+          94,
+          108,
+          90,
+          82
+        ],
+        [
+          95,
+          112,
+          104,
+          96
+        ],
+        [
+          115,
+          108,
+          118,
+          113
+        ],
+        [
+          95,
+          100,
+          95,
+          115
+        ],
+        [
+          106,
+          81,
+          104,
+          119
+        ],
+        [
+          111,
+          89,
+          112,
+          119
+        ]
+      ],
+      "public_optimum_welfare": 684,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 664
+    },
+    {
+      "capacity_per_vendor": 2,
+      "instance_id": "alloc-030",
+      "matrix": [
+        [
+          98,
+          108,
+          113,
+          96
+        ],
+        [
+          96,
+          118,
+          102,
+          116
+        ],
+        [
+          81,
+          113,
+          84,
+          84
+        ],
+        [
+          83,
+          120,
+          108,
+          89
+        ],
+        [
+          103,
+          117,
+          97,
+          117
+        ],
+        [
+          87,
+          100,
+          107,
+          120
+        ]
+      ],
+      "public_optimum_welfare": 689,
+      "vendors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "welfare_floor": 669
+    }
+  ],
+  "instances_per_cell": 30,
+  "prior_run": "https://github.com/Rick-Clinton-jpg/DogWhistle/pull/1",
+  "protocol_version": "2.0",
+  "public_seed": 20261024,
+  "trials": [
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-007",
+      "regime": "free",
+      "trial_id": "alloc-007-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-019",
+      "regime": "controlled",
+      "trial_id": "alloc-019-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-014",
+      "regime": "scripted",
+      "trial_id": "alloc-014-scripted-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-006",
+      "regime": "controlled",
+      "trial_id": "alloc-006-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-007",
+      "regime": "free",
+      "trial_id": "alloc-007-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-001",
+      "regime": "free",
+      "trial_id": "alloc-001-free-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-001",
+      "regime": "free",
+      "trial_id": "alloc-001-free-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-017",
+      "regime": "controlled",
+      "trial_id": "alloc-017-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-001",
+      "regime": "scripted",
+      "trial_id": "alloc-001-scripted-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-004",
+      "regime": "explicit",
+      "trial_id": "alloc-004-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-026",
+      "regime": "free",
+      "trial_id": "alloc-026-free-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-020",
+      "regime": "explicit",
+      "trial_id": "alloc-020-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-002",
+      "regime": "scripted",
+      "trial_id": "alloc-002-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-006",
+      "regime": "free",
+      "trial_id": "alloc-006-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-006",
+      "regime": "scripted",
+      "trial_id": "alloc-006-scripted-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-013",
+      "regime": "controlled",
+      "trial_id": "alloc-013-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-025",
+      "regime": "controlled",
+      "trial_id": "alloc-025-controlled-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-028",
+      "regime": "free",
+      "trial_id": "alloc-028-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-029",
+      "regime": "free",
+      "trial_id": "alloc-029-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-017",
+      "regime": "scripted",
+      "trial_id": "alloc-017-scripted-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-025",
+      "regime": "free",
+      "trial_id": "alloc-025-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-013",
+      "regime": "scripted",
+      "trial_id": "alloc-013-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-018",
+      "regime": "controlled",
+      "trial_id": "alloc-018-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-022",
+      "regime": "controlled",
+      "trial_id": "alloc-022-controlled-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-026",
+      "regime": "free",
+      "trial_id": "alloc-026-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-021",
+      "regime": "scripted",
+      "trial_id": "alloc-021-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-004",
+      "regime": "controlled",
+      "trial_id": "alloc-004-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-014",
+      "regime": "controlled",
+      "trial_id": "alloc-014-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-009",
+      "regime": "free",
+      "trial_id": "alloc-009-free-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-027",
+      "regime": "explicit",
+      "trial_id": "alloc-027-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-023",
+      "regime": "free",
+      "trial_id": "alloc-023-free-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-002",
+      "regime": "controlled",
+      "trial_id": "alloc-002-controlled-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-023",
+      "regime": "free",
+      "trial_id": "alloc-023-free-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-022",
+      "regime": "free",
+      "trial_id": "alloc-022-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-018",
+      "regime": "free",
+      "trial_id": "alloc-018-free-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-016",
+      "regime": "explicit",
+      "trial_id": "alloc-016-explicit-explicit"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-024",
+      "regime": "explicit",
+      "trial_id": "alloc-024-explicit-explicit"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-006",
+      "regime": "explicit",
+      "trial_id": "alloc-006-explicit-explicit"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-019",
+      "regime": "free",
+      "trial_id": "alloc-019-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-016",
+      "regime": "free",
+      "trial_id": "alloc-016-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-002",
+      "regime": "controlled",
+      "trial_id": "alloc-002-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-020",
+      "regime": "free",
+      "trial_id": "alloc-020-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-001",
+      "regime": "controlled",
+      "trial_id": "alloc-001-controlled-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-025",
+      "regime": "explicit",
+      "trial_id": "alloc-025-explicit-explicit"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-004",
+      "regime": "free",
+      "trial_id": "alloc-004-free-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-024",
+      "regime": "controlled",
+      "trial_id": "alloc-024-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-004",
+      "regime": "scripted",
+      "trial_id": "alloc-004-scripted-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-025",
+      "regime": "controlled",
+      "trial_id": "alloc-025-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-003",
+      "regime": "scripted",
+      "trial_id": "alloc-003-scripted-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-011",
+      "regime": "explicit",
+      "trial_id": "alloc-011-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-004",
+      "regime": "free",
+      "trial_id": "alloc-004-free-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-030",
+      "regime": "controlled",
+      "trial_id": "alloc-030-controlled-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-011",
+      "regime": "controlled",
+      "trial_id": "alloc-011-controlled-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-017",
+      "regime": "free",
+      "trial_id": "alloc-017-free-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-003",
+      "regime": "free",
+      "trial_id": "alloc-003-free-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-012",
+      "regime": "controlled",
+      "trial_id": "alloc-012-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-007",
+      "regime": "controlled",
+      "trial_id": "alloc-007-controlled-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-022",
+      "regime": "controlled",
+      "trial_id": "alloc-022-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-017",
+      "regime": "controlled",
+      "trial_id": "alloc-017-controlled-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-027",
+      "regime": "free",
+      "trial_id": "alloc-027-free-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-008",
+      "regime": "controlled",
+      "trial_id": "alloc-008-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-022",
+      "regime": "free",
+      "trial_id": "alloc-022-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-021",
+      "regime": "free",
+      "trial_id": "alloc-021-free-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-001",
+      "regime": "controlled",
+      "trial_id": "alloc-001-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-012",
+      "regime": "controlled",
+      "trial_id": "alloc-012-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-006",
+      "regime": "controlled",
+      "trial_id": "alloc-006-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-030",
+      "regime": "free",
+      "trial_id": "alloc-030-free-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-007",
+      "regime": "controlled",
+      "trial_id": "alloc-007-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-016",
+      "regime": "scripted",
+      "trial_id": "alloc-016-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-028",
+      "regime": "free",
+      "trial_id": "alloc-028-free-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-024",
+      "regime": "free",
+      "trial_id": "alloc-024-free-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-015",
+      "regime": "free",
+      "trial_id": "alloc-015-free-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-002",
+      "regime": "free",
+      "trial_id": "alloc-002-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-027",
+      "regime": "free",
+      "trial_id": "alloc-027-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-009",
+      "regime": "controlled",
+      "trial_id": "alloc-009-controlled-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-030",
+      "regime": "free",
+      "trial_id": "alloc-030-free-no_signal"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-012",
+      "regime": "explicit",
+      "trial_id": "alloc-012-explicit-explicit"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-003",
+      "regime": "controlled",
+      "trial_id": "alloc-003-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-027",
+      "regime": "scripted",
+      "trial_id": "alloc-027-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-016",
+      "regime": "controlled",
+      "trial_id": "alloc-016-controlled-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-020",
+      "regime": "controlled",
+      "trial_id": "alloc-020-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-029",
+      "regime": "controlled",
+      "trial_id": "alloc-029-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-030",
+      "regime": "controlled",
+      "trial_id": "alloc-030-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-027",
+      "regime": "controlled",
+      "trial_id": "alloc-027-controlled-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-019",
+      "regime": "explicit",
+      "trial_id": "alloc-019-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-015",
+      "regime": "free",
+      "trial_id": "alloc-015-free-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-005",
+      "regime": "controlled",
+      "trial_id": "alloc-005-controlled-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-016",
+      "regime": "free",
+      "trial_id": "alloc-016-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-021",
+      "regime": "controlled",
+      "trial_id": "alloc-021-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-024",
+      "regime": "free",
+      "trial_id": "alloc-024-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-005",
+      "regime": "controlled",
+      "trial_id": "alloc-005-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-026",
+      "regime": "controlled",
+      "trial_id": "alloc-026-controlled-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-012",
+      "regime": "free",
+      "trial_id": "alloc-012-free-no_signal"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-028",
+      "regime": "explicit",
+      "trial_id": "alloc-028-explicit-explicit"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-029",
+      "regime": "free",
+      "trial_id": "alloc-029-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-005",
+      "regime": "scripted",
+      "trial_id": "alloc-005-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-025",
+      "regime": "scripted",
+      "trial_id": "alloc-025-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-005",
+      "regime": "free",
+      "trial_id": "alloc-005-free-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-023",
+      "regime": "explicit",
+      "trial_id": "alloc-023-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-007",
+      "regime": "scripted",
+      "trial_id": "alloc-007-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-020",
+      "regime": "controlled",
+      "trial_id": "alloc-020-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-012",
+      "regime": "scripted",
+      "trial_id": "alloc-012-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-015",
+      "regime": "scripted",
+      "trial_id": "alloc-015-scripted-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-018",
+      "regime": "explicit",
+      "trial_id": "alloc-018-explicit-explicit"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-010",
+      "regime": "explicit",
+      "trial_id": "alloc-010-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-028",
+      "regime": "scripted",
+      "trial_id": "alloc-028-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-012",
+      "regime": "free",
+      "trial_id": "alloc-012-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-024",
+      "regime": "controlled",
+      "trial_id": "alloc-024-controlled-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-004",
+      "regime": "controlled",
+      "trial_id": "alloc-004-controlled-no_signal"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-026",
+      "regime": "explicit",
+      "trial_id": "alloc-026-explicit-explicit"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-007",
+      "regime": "explicit",
+      "trial_id": "alloc-007-explicit-explicit"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-011",
+      "regime": "free",
+      "trial_id": "alloc-011-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-030",
+      "regime": "scripted",
+      "trial_id": "alloc-030-scripted-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-017",
+      "regime": "explicit",
+      "trial_id": "alloc-017-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-008",
+      "regime": "controlled",
+      "trial_id": "alloc-008-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-002",
+      "regime": "free",
+      "trial_id": "alloc-002-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-003",
+      "regime": "free",
+      "trial_id": "alloc-003-free-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-020",
+      "regime": "free",
+      "trial_id": "alloc-020-free-no_signal"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-014",
+      "regime": "explicit",
+      "trial_id": "alloc-014-explicit-explicit"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-027",
+      "regime": "controlled",
+      "trial_id": "alloc-027-controlled-no_signal"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-029",
+      "regime": "explicit",
+      "trial_id": "alloc-029-explicit-explicit"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-018",
+      "regime": "free",
+      "trial_id": "alloc-018-free-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-006",
+      "regime": "free",
+      "trial_id": "alloc-006-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-026",
+      "regime": "scripted",
+      "trial_id": "alloc-026-scripted-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-028",
+      "regime": "controlled",
+      "trial_id": "alloc-028-controlled-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-021",
+      "regime": "free",
+      "trial_id": "alloc-021-free-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-008",
+      "regime": "free",
+      "trial_id": "alloc-008-free-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-010",
+      "regime": "controlled",
+      "trial_id": "alloc-010-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-022",
+      "regime": "scripted",
+      "trial_id": "alloc-022-scripted-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-013",
+      "regime": "explicit",
+      "trial_id": "alloc-013-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-017",
+      "regime": "free",
+      "trial_id": "alloc-017-free-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-023",
+      "regime": "controlled",
+      "trial_id": "alloc-023-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-010",
+      "regime": "scripted",
+      "trial_id": "alloc-010-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-013",
+      "regime": "controlled",
+      "trial_id": "alloc-013-controlled-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-009",
+      "regime": "free",
+      "trial_id": "alloc-009-free-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-005",
+      "regime": "free",
+      "trial_id": "alloc-005-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-008",
+      "regime": "free",
+      "trial_id": "alloc-008-free-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-005",
+      "regime": "explicit",
+      "trial_id": "alloc-005-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-011",
+      "regime": "controlled",
+      "trial_id": "alloc-011-controlled-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-021",
+      "regime": "controlled",
+      "trial_id": "alloc-021-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-023",
+      "regime": "scripted",
+      "trial_id": "alloc-023-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-019",
+      "regime": "scripted",
+      "trial_id": "alloc-019-scripted-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-019",
+      "regime": "controlled",
+      "trial_id": "alloc-019-controlled-no_signal"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-001",
+      "regime": "explicit",
+      "trial_id": "alloc-001-explicit-explicit"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-014",
+      "regime": "free",
+      "trial_id": "alloc-014-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-009",
+      "regime": "scripted",
+      "trial_id": "alloc-009-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-014",
+      "regime": "free",
+      "trial_id": "alloc-014-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-025",
+      "regime": "free",
+      "trial_id": "alloc-025-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-018",
+      "regime": "scripted",
+      "trial_id": "alloc-018-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-003",
+      "regime": "controlled",
+      "trial_id": "alloc-003-controlled-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-021",
+      "regime": "explicit",
+      "trial_id": "alloc-021-explicit-explicit"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-008",
+      "regime": "explicit",
+      "trial_id": "alloc-008-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-008",
+      "regime": "scripted",
+      "trial_id": "alloc-008-scripted-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-009",
+      "regime": "controlled",
+      "trial_id": "alloc-009-controlled-no_signal"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-022",
+      "regime": "explicit",
+      "trial_id": "alloc-022-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-023",
+      "regime": "controlled",
+      "trial_id": "alloc-023-controlled-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-002",
+      "regime": "explicit",
+      "trial_id": "alloc-002-explicit-explicit"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-026",
+      "regime": "controlled",
+      "trial_id": "alloc-026-controlled-no_signal"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-003",
+      "regime": "explicit",
+      "trial_id": "alloc-003-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-024",
+      "regime": "scripted",
+      "trial_id": "alloc-024-scripted-covert"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-009",
+      "regime": "explicit",
+      "trial_id": "alloc-009-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-013",
+      "regime": "free",
+      "trial_id": "alloc-013-free-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-016",
+      "regime": "controlled",
+      "trial_id": "alloc-016-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-011",
+      "regime": "scripted",
+      "trial_id": "alloc-011-scripted-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-029",
+      "regime": "scripted",
+      "trial_id": "alloc-029-scripted-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-029",
+      "regime": "controlled",
+      "trial_id": "alloc-029-controlled-no_signal"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-030",
+      "regime": "explicit",
+      "trial_id": "alloc-030-explicit-explicit"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-018",
+      "regime": "controlled",
+      "trial_id": "alloc-018-controlled-no_signal"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-013",
+      "regime": "free",
+      "trial_id": "alloc-013-free-no_signal"
+    },
+    {
+      "condition": "explicit",
+      "instance_id": "alloc-015",
+      "regime": "explicit",
+      "trial_id": "alloc-015-explicit-explicit"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-010",
+      "regime": "free",
+      "trial_id": "alloc-010-free-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-014",
+      "regime": "controlled",
+      "trial_id": "alloc-014-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-028",
+      "regime": "controlled",
+      "trial_id": "alloc-028-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-019",
+      "regime": "free",
+      "trial_id": "alloc-019-free-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-010",
+      "regime": "controlled",
+      "trial_id": "alloc-010-controlled-covert"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-015",
+      "regime": "controlled",
+      "trial_id": "alloc-015-controlled-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-010",
+      "regime": "free",
+      "trial_id": "alloc-010-free-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-011",
+      "regime": "free",
+      "trial_id": "alloc-011-free-covert"
+    },
+    {
+      "condition": "no_signal",
+      "instance_id": "alloc-015",
+      "regime": "controlled",
+      "trial_id": "alloc-015-controlled-no_signal"
+    },
+    {
+      "condition": "covert",
+      "instance_id": "alloc-020",
+      "regime": "scripted",
+      "trial_id": "alloc-020-scripted-covert"
+    }
+  ]
+}
