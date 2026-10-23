@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neural-node-swarm"
+version = "0.1.0"
+requires-python = ">=3.11"
+description = "Schema-first disposable agent relay with deterministic verification"
+dependencies = ["jsonschema>=4.20"]
+license = "PolyForm-Noncommercial-1.0.0"
+
+[project.scripts]
+neural-node-swarm = "neural_node_swarm.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+validation = ["jsonschema>=4.20"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
