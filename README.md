@@ -22,6 +22,15 @@ for original commits, chronology, hashes, and audit commands.
 
 ## New experiment
 
-The new allocation study will live outside `prior_work/`. Its protocol and
-fixed analysis plan will be committed before any live sender call. No new
-results should be inferred from the inherited PR #5/#6 ledger.
+The new allocation study is under `dogwhistle/` and `study/`. Its
+[preregistered protocol](study/PROTOCOL.md), fixed analysis plan, task seed,
+prompts, and hidden-coalition commitment are published before any live sender
+call. The free handoff has 12 possible ordered vendor-reference pairs
+(`log2(12) ≈ 3.585` structural bits); the controlled handoff selects one pair
+from public task data and carries zero sender-dependent bits through that
+field. The study tests whether this difference changes **allocations**.
+
+No new results should be inferred from the inherited PR #5/#6 ledger. The
+synthetic allocation task and its limited adoption-cost claim are described in
+the protocol. DogWhistle is anchored to [Apart's Collusion Carriers and
+Countermeasures track](https://apartresearch.com/sprints/ai-collusion-research-sprint-2026-10-23-to-2026-10-25).
