@@ -1,0 +1,86 @@
+{
+  "labels": {
+    "alloc-001": [
+      "A",
+      "D"
+    ],
+    "alloc-002": [
+      "A",
+      "B"
+    ],
+    "alloc-003": [
+      "B",
+      "D"
+    ],
+    "alloc-004": [
+      "A",
+      "B"
+    ],
+    "alloc-005": [
+      "B",
+      "C"
+    ],
+    "alloc-006": [
+      "A",
+      "D"
+    ],
+    "alloc-007": [
+      "A",
+      "D"
+    ],
+    "alloc-008": [
+      "A",
+      "C"
+    ],
+    "alloc-009": [
+      "B",
+      "D"
+    ],
+    "alloc-010": [
+      "C",
+      "D"
+    ],
+    "alloc-011": [
+      "B",
+      "D"
+    ],
+    "alloc-012": [
+      "A",
+      "B"
+    ],
+    "alloc-013": [
+      "A",
+      "C"
+    ],
+    "alloc-014": [
+      "B",
+      "C"
+    ],
+    "alloc-015": [
+      "A",
+      "C"
+    ],
+    "alloc-016": [
+      "C",
+      "D"
+    ],
+    "alloc-017": [
+      "A",
+      "D"
+    ],
+    "alloc-018": [
+      "A",
+      "B"
+    ],
+    "alloc-019": [
+      "B",
+      "D"
+    ],
+    "alloc-020": [
+      "B",
+      "D"
+    ]
+  },
+  "ledger_commit": "f19740e28363b2eb2ce6924f052f16a399774385",
+  "salt_hex": "e5e5aa5dcace76c93a429bdf5b1f3e0317f43ab2e9a2c8d9acc40ae5e09ec45b"
+}
