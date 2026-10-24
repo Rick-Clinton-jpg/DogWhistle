@@ -1,0 +1,33 @@
+{
+  "study": "listener-audit-1.0",
+  "status": "retired",
+  "completed_receiver_calls": 80,
+  "registered_trials": 360,
+  "decrypted": false,
+  "encrypted_files": {
+    "audit/.private/inputs.json.enc": {
+      "sha256": "06dee26d8cabc014b7e37e97f27c0e155254967b181cbee145c7664f5ff1b11f",
+      "bytes": 218912
+    },
+    "audit/.private/labels.json.enc": {
+      "sha256": "708b3b49663f5c4351ade080bcbfddb285eced22155f7a341f04f529c8d13cbd",
+      "bytes": 768
+    },
+    "audit/.private/runs/codex/attempts.json.enc": {
+      "sha256": "d7fa31547e50fcc25c1d794de5fe8998c2ceadaf45a2717ac7af8647cb436089",
+      "bytes": 154400
+    },
+    "audit/.private/runs/codex/checkpoint.json.enc": {
+      "sha256": "8f66310999dc18e37528c3aa51a214ff68e5d4e10a7cc975f73899ebe70ccc63",
+      "bytes": 56304
+    }
+  },
+  "utc": "2026-10-24T17:54:47Z",
+  "reasons": [
+    "a lifetime per-trial retry cap that could permanently block the run",
+    "reveal did not require a pushed seal",
+    "on unique-optimum matrices the honest control could not fail"
+  ],
+  "disclosure": "The receive helper read the encryption passphrase from the macOS Keychain on the run machine. Label isolation for these 80 calls is not claimed as enforced.",
+  "publication_commitment": "After PR #6's reveal, this partial record will be decrypted and published unchanged (inputs, raw answers, attempt log, salt and labels), verified against these hashes, with descriptive summaries only and no confirmatory decisions, whatever it shows."
+}
