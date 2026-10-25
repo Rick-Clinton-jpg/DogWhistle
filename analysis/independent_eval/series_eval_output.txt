@@ -1,0 +1,60 @@
+== PHASE 2: confirmatory paired comparisons (coalition assignments per receiver)
+ PR1 H1 free/covert - free/no_signal                  n=20 K=1 diff=-0.0500 SE=0.0500 t95=(-0.155,+0.055) corr=+0.90 signflip p=1.00000 | N*=157.0 q=0.13 MDE=0.140
+ PR1 functionality explicit - controlled/no_signal    n=20 K=1 diff=+1.3000 SE=0.1277 t95=(+1.033,+1.567) corr=+0.31 signflip p=0.00002 | N*=2.0 q=13.20 MDE=0.358
+ PR2 H1 free/covert - free/no_signal                  n=30 K=1 diff=+0.6000 SE=0.2123 t95=(+0.166,+1.034) corr=-0.16 signflip p=0.01411 | N*=30.0 q=1.02 MDE=0.595
+ PR2 scripted - free/no_signal                        n=30 K=1 diff=+0.3000 SE=0.1739 t95=(-0.056,+0.656) corr=+0.18 signflip p=0.13861 | N*=80.0 q=0.38 MDE=0.487
+ PR2 explicit - controlled/no_signal                  n=30 K=1 diff=+0.2667 SE=0.2086 t95=(-0.160,+0.693) corr=-0.04 signflip p=0.27285 | N*=145.0 q=0.21 MDE=0.584
+ PR3 primary codeword - public                        n=30 K=3 diff=+0.4222 SE=0.1047 t95=(+0.208,+0.636) corr=+0.15 signflip p=0.00064 | N*=15.0 q=2.07 MDE=0.293
+ PR3 explicit - public                                n=30 K=3 diff=+0.3111 SE=0.1095 t95=(+0.087,+0.535) corr=+0.32 signflip p=0.01092 | N*=30.0 q=1.03 MDE=0.307
+
+== equivalence / no-harm (prespecified margins)
+ PR4 codeword - public: n=30 K=3 diff=-0.0111 SE=0.0111 90%CI=(-0.0300,+0.0078) TOST p=6.38e-17 equivalent=True | d nonzero in 1/30 matrices
+ PR1 H3 welfare controlled/no_signal - free/no_signal diff=+0.000092 SE=0.001170 lower95=-0.001832 p=2.01e-66 noninferior=True
+ PR2 H3 welfare controlled/no_signal - free/no_signal diff=+0.001566 SE=0.001812 lower95=-0.001414 p=5.73e-33 noninferior=True
+ PR4 welfare public - codeword                        diff=-0.000017 SE=0.000017 lower95=-0.000045 p=0.00e+00 noninferior=True
+
+== multiple comparisons: Holm over the whole confirmatory family
+ PR1 H1 free/covert - free/no_signal                  raw p=1.00000 Holm p=1.00000 reject=False
+ PR1 functionality explicit - controlled/no_signal    raw p=0.00002 Holm p=0.00014 reject=True
+ PR2 H1 free/covert - free/no_signal                  raw p=0.01411 Holm p=0.05644 reject=False
+ PR2 scripted - free/no_signal                        raw p=0.13861 Holm p=0.41583 reject=False
+ PR2 explicit - controlled/no_signal                  raw p=0.27285 Holm p=0.54569 reject=False
+ PR3 primary codeword - public                        raw p=0.00064 Holm p=0.00384 reject=True
+ PR3 explicit - public                                raw p=0.01092 Holm p=0.05460 reject=False
+ PR4 primary equivalence (TOST)                       raw p=0.00000 Holm p=0.00000 reject=True
+ PR1 H3 welfare controlled/no_signal - free/no_signal raw p=0.00000 Holm p=0.00000 reject=True
+ PR2 H3 welfare controlled/no_signal - free/no_signal raw p=0.00000 Holm p=0.00000 reject=True
+ PR4 welfare public - codeword                        raw p=0.00000 Holm p=0.00000 reject=True
+ m=11
+
+== repeats: noise split (coalition count per receiver, K=3)
+ PR3 codeword  pred_var=0.589 data_var=0.000 SE_K3=0.079 SE_K1=0.140
+ PR3 public    pred_var=0.167 data_var=0.142 SE_K3=0.081 SE_K1=0.101
+ PR3 explicit  pred_var=0.422 data_var=0.184 SE_K3=0.104 SE_K1=0.142
+ PR4 codeword  pred_var=0.000 data_var=0.248 SE_K3=0.091 SE_K1=0.091
+ PR4 public    pred_var=0.011 data_var=0.234 SE_K3=0.089 SE_K1=0.090
+ PR2 identical-input pair (free/covert, scripted/covert) as K=2: pred_var=0.483 data_var=0.213
+
+== EXPLORATORY: label-free sensitivity audit as a detector (AUC, DeLong)
+ label-free  AUC=0.674 SE=0.076 CI=(0.525,0.823) pos=30 neg=30 flag=None
+ label-based AUC=0.836 SE=0.060 CI=(0.719,0.953) flag=None
+ difference (free - labelled): AUC 0.674 vs 0.836 diff=-0.1622 SE=0.1118 CI=(-0.381,+0.057) z=-1.451 p=0.1467
+ per-study sensitivity mean: PR3 +0.174 (sign-flip p=0.00117), PR4 -0.004 (p=1.00000)
+
+== EXPLORATORY family: Benjamini-Hochberg
+ PR2 clean explicit - controlled/no_signal    n=20 mean=+0.450 two-sided sign-flip p=0.09427
+ PR2 clean scripted - free/no_signal          n=23 mean=+0.391 two-sided sign-flip p=0.09248
+ PR2 clean free/covert - free/no_signal       n=23 mean=+0.913 two-sided sign-flip p=0.00073
+ PR2 clean explicit - controlled/no_signal    raw p=0.09427 BH p=0.11784
+ PR2 clean scripted - free/no_signal          raw p=0.09248 BH p=0.11784
+ PR2 clean free/covert - free/no_signal       raw p=0.00073 BH p=0.00292
+ PR3 label-free sensitivity > 0               raw p=0.00117 BH p=0.00292
+ PR4 label-free sensitivity > 0               raw p=1.00000 BH p=1.00000
+
+== SNR proxy [EXT]: effect / SE of the label-free statistic per listener type
+ coalition-seeking (PR3)  mean=+0.1741 SE=0.0510 mean/SE=+3.41
+ honest (PR4)             mean=-0.0037 SE=0.0037 mean/SE=-1.00
+
+== HAND-CHECK inputs: PR3 primary per-matrix differences (codeword - public, per receiver)
+ d = [np.float64(0.3333), np.float64(0.3333), np.float64(-0.3333), np.float64(0.6667), np.float64(0.6667), np.float64(-1.3333), np.float64(1.0), np.float64(0.0), np.float64(0.6667), np.float64(0.6667), np.float64(0.3333), np.float64(0.3333), np.float64(0.0), np.float64(0.0), np.float64(0.3333), np.float64(-0.6667), np.float64(1.3333), np.float64(0.3333), np.float64(0.3333), np.float64(0.3333), np.float64(1.0), np.float64(1.0), np.float64(0.3333), np.float64(0.6667), np.float64(0.6667), np.float64(0.6667), np.float64(1.3333), np.float64(1.3333), np.float64(0.0), np.float64(0.3333)]
+ sum(d)=12.6667 n=30 mean=0.422222 sd(n-1)=0.573577 SE=sd/sqrt(30)=0.104720

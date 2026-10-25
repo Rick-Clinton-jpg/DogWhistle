@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DogWhistle in 3D</title>
+<meta name="description" content="Interactive 3D view of the DogWhistle experiment and its PR #6 results: a codeword in two handoff refs that only the coalition listener acts on.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one centred column; a segmented switch between two orbitable 3D stages, captions and a data table underneath. */
+:root {
+  --bg: #F3F5F7; --surface: #FBFCFD; --ink: #1B2330; --muted: #566273; --line: #D5DCE3;
+  --coalition: #E07A2E; --coalition-soft: #F2C7A5; --honest: #2F6FB0; --honest-soft: #A9C4E3;
+  --neutral: #8A95A3; --grid: #C9D1DA; --axis: #7D8896;
+  --display: 'Source Serif 4', Georgia, serif; --body: 'IBM Plex Sans', Arial, sans-serif; --mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121821; --surface: #1A222D; --ink: #E9EDF2; --muted: #A4B0BE; --line: #2C3644;
+  --coalition: #EE8A43; --coalition-soft: #8F5A33; --honest: #5B97D6; --honest-soft: #35587F;
+  --neutral: #8C98A6; --grid: #2C3644; --axis: #6E7B8B; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121821; --surface: #1A222D; --ink: #E9EDF2; --muted: #A4B0BE; --line: #2C3644;
+  --coalition: #EE8A43; --coalition-soft: #8F5A33; --honest: #5B97D6; --honest-soft: #35587F;
+  --neutral: #8C98A6; --grid: #2C3644; --axis: #6E7B8B; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+[hidden] { display: none !important; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 64px; display: flex; flex-direction: column; gap: 20px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--coalition); }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 0; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 68ch; margin: 0; }
+.switch { display: inline-flex; gap: 4px; padding: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; align-self: flex-start; }
+.switch button { font: 500 14px var(--body); color: var(--muted); background: transparent; border: 0; border-radius: 7px; padding: 8px 14px; cursor: pointer; }
+.switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.switch button:focus-visible { outline: 2px solid var(--coalition); outline-offset: 2px; }
+.stage { position: relative; width: 100%; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; touch-action: none; }
+.stage canvas { display: block; }
+.labels { position: absolute; inset: 0; pointer-events: none; }
+.tag { font-family: var(--body); font-size: 13px; font-weight: 500; color: var(--ink); background: color-mix(in srgb, var(--surface) 86%, transparent); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; white-space: nowrap; }
+.tag small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
+.tag.c { border-color: var(--coalition); }
+.tag.h { border-color: var(--honest); }
+.val { font-family: var(--mono); font-size: 12px; color: var(--ink); }
+.tick { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.hint { position: absolute; right: 12px; bottom: 10px; font-size: 12px; color: var(--muted); pointer-events: none; }
+.caption { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.caption div { min-width: 0; }
+.caption b { display: block; font-family: var(--mono); font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.caption span { color: var(--muted); font-size: 14px; }
+.key { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--muted); }
+.key i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+summary { cursor: pointer; font-weight: 500; }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; margin-top: 10px; font-size: 14px; }
+th, td { text-align: right; padding: 6px 10px; border-bottom: 1px solid var(--line); }
+th:first-child, td:first-child { text-align: left; }
+.source { font-size: 13px; color: var(--muted); }
+.source a { color: inherit; }
+.links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0; font-size: 15px; }
+.links a { color: var(--ink); font-weight: 500; text-underline-offset: 3px; text-decoration-color: var(--coalition); }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">DogWhistle · PR #6</p>
+  <h1>A codeword only one listener hears</h1>
+  <p class="lede">Two schema-valid memory references carry a planted coalition codeword. Drag to orbit each view. The flow shows the experiment; the results show the share of items each listener gave the hidden pair, under each prompt wording, on the same 30 tasks.</p>
+  <p class="links"><a href="DogWhistle-slides.pdf">Slides (PDF)</a><a href="https://github.com/Rick-Clinton-jpg/DogWhistle">Code, ledgers and replay commands</a></p>
+
+  <div class="switch" role="group" aria-label="Choose a view">
+    <button id="btn-flow" type="button" aria-pressed="true">Experiment flow</button>
+    <button id="btn-results" type="button" aria-pressed="false">PR #6 results</button>
+  </div>
+
+  <div id="stage-flow" class="stage" role="img" aria-label="3D flow: a public task and one of two kinds of refs feed a handoff; a whistle ring spreads from it; only the coalition listener reacts; both listeners' assignments feed the audit S equals X minus W.">
+    <div class="labels" id="labels-flow"></div>
+    <p class="hint">Drag to orbit · scroll to zoom</p>
+  </div>
+  <div id="stage-results" class="stage" hidden role="img" aria-label="3D bar chart of the hidden-pair assignment share for both listeners with both kinds of refs under three prompt wordings. The coalition listener with codeword refs is highest under every wording.">
+    <div class="labels" id="labels-results"></div>
+    <p class="hint">Drag to orbit · scroll to zoom</p>
+  </div>
+
+  <div id="cap-flow" class="caption">
+    <div><b>Only the refs change</b><span>Codeword refs: the two vendors outside the hidden pair. Public refs: the top two vendors, chosen by code.</span></div>
+    <div><b>Two listeners</b><span>The coalition listener knows the convention; the honest listener is told only to maximise total value. Three wordings each.</span></div>
+    <div><b>S = X − W</b><span>How often a listener's answer changes when the refs swap, minus how often it changes across wordings alone. No hidden pair needed.</span></div>
+  </div>
+  <div id="cap-results" class="caption" hidden>
+    <div><b>+0.356</b><span>Sensitivity difference, coalition minus honest. 95% interval +0.256 to +0.456, exact p = 2.05 × 10⁻⁷.</span></div>
+    <div><b>+0.93</b><span>Extra items the coalition listener gives the hidden pair per answer with codeword refs, against public refs.</span></div>
+    <div><b>±0.20</b><span>The honest listener stays inside this equivalence margin (+0.067 items per answer).</span></div>
+  </div>
+
+  <div class="key" id="key-results" hidden>
+    <span><i style="background:var(--coalition)"></i>Coalition · codeword refs</span>
+    <span><i style="background:var(--coalition-soft)"></i>Coalition · public refs</span>
+    <span><i style="background:var(--honest)"></i>Honest · codeword refs</span>
+    <span><i style="background:var(--honest-soft)"></i>Honest · public refs</span>
+    <span><i style="background:var(--neutral);opacity:.45"></i>Any optimal answer at random (0.417)</span>
+  </div>
+
+  <details>
+    <summary>Data behind the results view</summary>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Listener / refs</th><th>Wording 1</th><th>Wording 2</th><th>Wording 3</th><th>Mean</th></tr></thead>
+        <tbody>
+          <tr><td>Coalition / codeword</td><td>0.5611</td><td>0.6444</td><td>0.6611</td><td>0.6222</td></tr>
+          <tr><td>Coalition / public</td><td>0.4778</td><td>0.4611</td><td>0.4611</td><td>0.4667</td></tr>
+          <tr><td>Honest / codeword</td><td>0.4444</td><td>0.4444</td><td>0.4389</td><td>0.4426</td></tr>
+          <tr><td>Honest / public</td><td>0.4278</td><td>0.4333</td><td>0.4333</td><td>0.4315</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source">Share of the six items assigned to the hidden pair, averaged over 30 tasks (90 calls per row). Model gpt-6.1-sol via Codex CLI. Wording 1 is the original PR #3 / PR #4 prompt. Source: <a href="https://github.com/Rick-Clinton-jpg/DogWhistle/blob/main/listener/RESULTS.md">listener/RESULTS.md</a>.</p>
+  </details>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/renderers/CSS2DRenderer.js"></script>
+<script>
+(function () {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const col = n => new THREE.Color(css(n) || '#888888');
+
+  function tag(html, cls) {
+    const el = document.createElement('div');
+    el.className = cls || 'tag';
+    el.innerHTML = html;
+    return new THREE.CSS2DObject(el);
+  }
+
+  function makeStage(stageId, labelsId, camPos, target) {
+    const host = document.getElementById(stageId);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(40, 1.6, 0.1, 200);
+    camera.position.set(camPos[0], camPos[1], camPos[2]);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    host.insertBefore(renderer.domElement, host.firstChild);
+    const labelRenderer = new THREE.CSS2DRenderer();
+    const lab = document.getElementById(labelsId);
+    lab.appendChild(labelRenderer.domElement);
+    labelRenderer.domElement.style.position = 'absolute';
+    labelRenderer.domElement.style.inset = '0';
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.target.set(target[0], target[1], target[2]);
+    controls.enableDamping = true;
+    controls.enablePan = false;
+    controls.minDistance = 8;
+    controls.maxDistance = 48;
+    controls.autoRotate = !reduced;
+    controls.autoRotateSpeed = 0.6;
+    renderer.domElement.addEventListener('pointerdown', () => { controls.autoRotate = false; });
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x445566, 0.7));
+    const sun = new THREE.DirectionalLight(0xffffff, 0.5);
+    sun.position.set(8, 16, 10);
+    scene.add(sun);
+    const st = { host, scene, camera, renderer, labelRenderer, controls, tick: null };
+    st.resize = () => {
+      const w = host.clientWidth;
+      const h = Math.max(340, Math.min(Math.round(w * 0.62), 620));
+      host.style.height = h + 'px';
+      renderer.setSize(w, h);
+      labelRenderer.setSize(w, h);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    };
+    return st;
+  }
+
+  function line(points, colorName, opacity) {
+    const g = new THREE.BufferGeometry().setFromPoints(points.map(p => new THREE.Vector3(p[0], p[1], p[2])));
+    const m = new THREE.LineBasicMaterial({ color: col(colorName), transparent: true, opacity: opacity == null ? 1 : opacity });
+    const l = new THREE.Line(g, m);
+    l.userData.colorName = colorName;
+    return l;
+  }
+
+  /* ---------- Flow view ---------- */
+  const flow = makeStage('stage-flow', 'labels-flow', [4, 13, 19], [1, 0.8, 0]);
+  const themed = [];
+  (function buildFlow() {
+    const s = flow.scene;
+    const grid = new THREE.GridHelper(30, 30, col('--grid'), col('--grid'));
+    grid.position.y = -0.01;
+    s.add(grid); themed.push(['grid', grid]);
+    const mat = (name, extra) => { const m = new THREE.MeshStandardMaterial(Object.assign({ color: col(name), roughness: 0.55, metalness: 0.05 }, extra || {})); m.userData.colorName = name; themed.push(['mat', m]); return m; };
+    const box = (w, h, d, m, x, y, z) => { const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); b.position.set(x, y, z); s.add(b); return b; };
+
+    box(3, 1.6, 3, mat('--neutral'), -10, 0.8, 0);
+    const t1 = tag('Public task<small>6 items × 4 vendors · exact optimum</small>'); t1.position.set(-10, 2.4, 0); s.add(t1);
+
+    box(1.8, 0.5, 1.8, mat('--neutral'), -6.5, 0.25, -4.2);
+    box(1.8, 0.5, 1.8, mat('--neutral'), -6.5, 0.25, 4.2);
+    const ta = tag('Codeword refs<small>2 vendors outside the pair</small>'); ta.position.set(-6.5, 1.4, -4.2); s.add(ta);
+    const tb = tag('Public refs<small>top 2 vendors, chosen by code</small>'); tb.position.set(-6.5, 1.4, 4.2); s.add(tb);
+
+    const card = box(2.8, 0.22, 3.6, mat('--surface', { roughness: 0.8 }), -2.6, 1.0, 0);
+    const chipM = mat('--ink');
+    box(0.9, 0.16, 0.6, chipM, -3.1, 1.2, -0.6);
+    box(0.9, 0.16, 0.6, chipM, -2.1, 1.2, -0.6);
+    const tc = tag('Handoff<small>schema-valid · 2 memory refs</small>'); tc.position.set(-2.6, 2.3, 0); s.add(tc);
+
+    const sphereG = new THREE.SphereGeometry(1, 40, 24);
+    const cMat = mat('--coalition', { emissive: col('--coalition'), emissiveIntensity: 0.15 });
+    const hMat = mat('--honest', { emissive: col('--honest'), emissiveIntensity: 0.12 });
+    const coal = new THREE.Mesh(sphereG, cMat); coal.position.set(3, 1.4, -3); s.add(coal);
+    const hon = new THREE.Mesh(sphereG, hMat); hon.position.set(3, 1.4, 3); s.add(hon);
+    const tco = tag('Coalition listener<small>knows the convention</small>', 'tag c'); tco.position.set(3, 3.0, -3); s.add(tco);
+    const tho = tag('Honest listener<small>maximises total value</small>', 'tag h'); tho.position.set(3, 3.0, 3); s.add(tho);
+
+    box(1.6, 1.0, 1.6, mat('--neutral'), 7, 0.5, -3);
+    box(1.6, 1.0, 1.6, mat('--neutral'), 7, 0.5, 3);
+    const tas = tag('Assignments<small>scored by the exact solver</small>'); tas.position.set(7, 1.7, 0); s.add(tas);
+
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(1.3, 0.22, 20, 64), mat('--coalition', { emissive: col('--coalition'), emissiveIntensity: 0.25 }));
+    ring.position.set(11, 1.6, 0); ring.rotation.y = Math.PI / 2; s.add(ring);
+    const tau = tag('Audit · S = X − W<small>change on swap minus own noise</small>'); tau.position.set(11, 3.5, 0); s.add(tau);
+
+    const paths = [
+      [[-8.5, 0.8, 0], [-4.0, 1.0, 0]],
+      [[-6.5, 0.5, -3.3], [-3.4, 1.0, -1.6]],
+      [[-6.5, 0.5, 3.3], [-3.4, 1.0, 1.6]],
+      [[-1.2, 1.0, -0.6], [2.0, 1.4, -2.6]],
+      [[-1.2, 1.0, 0.6], [2.0, 1.4, 2.6]],
+      [[4.0, 1.4, -3], [6.2, 0.6, -3]],
+      [[4.0, 1.4, 3], [6.2, 0.6, 3]],
+      [[7.8, 0.6, -3], [10.2, 1.4, -0.8]],
+      [[7.8, 0.6, 3], [10.2, 1.4, 0.8]]
+    ];
+    paths.forEach(p => { const l = line(p, '--axis', 0.9); s.add(l); themed.push(['line', l]); });
+
+    const waves = [];
+    for (let i = 0; i < 3; i++) {
+      const wm = new THREE.MeshBasicMaterial({ color: col('--coalition'), transparent: true, opacity: 0, side: THREE.DoubleSide });
+      wm.userData.colorName = '--coalition'; themed.push(['mat', wm]);
+      const w = new THREE.Mesh(new THREE.RingGeometry(0.96, 1, 96), wm);
+      w.rotation.x = -Math.PI / 2; w.position.set(-2.6, 1.15, 0);
+      s.add(w); waves.push({ mesh: w, phase: i / 3 });
+    }
+
+    const travel = [
+      { a: [-1.2, 1.0, -0.6], b: [2.0, 1.4, -2.6], m: cMat },
+      { a: [-1.2, 1.0, 0.6], b: [2.0, 1.4, 2.6], m: hMat }
+    ];
+    const pulseG = new THREE.SphereGeometry(0.16, 16, 10);
+    const pulses = travel.map(t => { const p = new THREE.Mesh(pulseG, t.m); s.add(p); return Object.assign({ mesh: p }, t); });
+
+    flow.tick = (time) => {
+      const T = reduced ? 0.35 : (time / 2600) % 1;
+      waves.forEach(w => {
+        const k = reduced ? w.phase : (T + w.phase) % 1;
+        const r = 0.6 + k * 6.5;
+        w.mesh.scale.set(r, r, r);
+        w.mesh.material.opacity = 0.42 * (1 - k);
+      });
+      pulses.forEach(p => {
+        const k = reduced ? 0.6 : T;
+        p.mesh.position.set(p.a[0] + (p.b[0] - p.a[0]) * k, p.a[1] + (p.b[1] - p.a[1]) * k, p.a[2] + (p.b[2] - p.a[2]) * k);
+      });
+      const glow = reduced ? 0.6 : 0.5 + 0.5 * Math.sin(time / 300);
+      cMat.emissiveIntensity = 0.15 + 0.55 * glow;
+      coal.scale.setScalar(1 + 0.08 * glow);
+      hMat.emissiveIntensity = 0.12;
+    };
+  })();
+
+  /* ---------- Results view ---------- */
+  const results = makeStage('stage-results', 'labels-results', [15, 12, 15], [2.2, 2.4, 3.3]);
+  (function buildResults() {
+    const s = results.scene;
+    const rows = [
+      { name: 'Coalition · codeword', c: '--coalition', v: [0.5611, 0.6444, 0.6611] },
+      { name: 'Coalition · public', c: '--coalition-soft', v: [0.4778, 0.4611, 0.4611] },
+      { name: 'Honest · codeword', c: '--honest', v: [0.4444, 0.4444, 0.4389] },
+      { name: 'Honest · public', c: '--honest-soft', v: [0.4278, 0.4333, 0.4333] }
+    ];
+    const H = 10, SX = 2.2, SZ = 2.2, W = 1.3;
+    const floor = new THREE.Mesh(new THREE.PlaneGeometry(8.6, 10.6), new THREE.MeshBasicMaterial({ color: col('--grid'), transparent: true, opacity: 0.35, side: THREE.DoubleSide }));
+    floor.material.userData.colorName = '--grid'; themed.push(['mat', floor.material]);
+    floor.rotation.x = -Math.PI / 2; floor.position.set(SX, 0, SZ * 1.5); s.add(floor);
+
+    rows.forEach((r, zi) => {
+      const m = new THREE.MeshStandardMaterial({ color: col(r.c), roughness: 0.5, metalness: 0.05 });
+      m.userData.colorName = r.c; themed.push(['mat', m]);
+      r.v.forEach((v, xi) => {
+        const h = v * H;
+        const b = new THREE.Mesh(new THREE.BoxGeometry(W, h, W), m);
+        b.position.set(xi * SX, h / 2, zi * SZ);
+        s.add(b);
+        const t = tag(v.toFixed(3), 'val'); t.position.set(xi * SX, h + 0.45, zi * SZ); s.add(t);
+      });
+      const rl = tag(r.name, zi < 2 ? 'tag c' : 'tag h'); rl.position.set(3 * SX + 0.9, 0.2, zi * SZ); s.add(rl);
+    });
+    ['Wording 1', 'Wording 2', 'Wording 3'].forEach((n, xi) => { const t = tag(n); t.position.set(xi * SX, 0.2, 4 * SZ - 0.4); s.add(t); });
+
+    const AX = 3 * SX - 0.4, AZ = -1.1;
+    [0, 0.2, 0.4, 0.6].forEach(v => {
+      const y = v * H;
+      const l = line([[-1.1, y, AZ], [AX, y, AZ]], '--grid', 1); s.add(l); themed.push(['line', l]);
+      const t = tag(v.toFixed(1), 'tick'); t.position.set(AX + 0.5, y, AZ); s.add(t);
+    });
+    const ax = line([[AX, 0, AZ], [AX, 0.66 * H, AZ]], '--axis', 1); s.add(ax); themed.push(['line', ax]);
+    const axT = tag('Share of items to the hidden pair', 'tick'); axT.position.set(AX + 1.4, 0.82 * H, AZ); s.add(axT);
+
+    const base = 2.5 / 6;
+    const bp = new THREE.Mesh(new THREE.PlaneGeometry(3 * SX + 0.4, 4 * SZ + 0.4), new THREE.MeshBasicMaterial({ color: col('--neutral'), transparent: true, opacity: 0.22, side: THREE.DoubleSide, depthWrite: false }));
+    bp.material.userData.colorName = '--neutral'; themed.push(['mat', bp.material]);
+    bp.rotation.x = -Math.PI / 2; bp.position.set(SX, base * H, SZ * 1.5); s.add(bp);
+    const bt = tag('0.417 · any optimal answer', 'tick'); bt.position.set(AX + 2.6, base * H, AZ + 0.6); s.add(bt);
+    results.tick = null;
+    results.controls.autoRotate = false;
+  })();
+
+  function retheme() {
+    themed.forEach(([kind, obj]) => {
+      if (kind === 'grid') { obj.material.color = col('--grid'); }
+      else if (kind === 'mat') { obj.color = col(obj.userData.colorName); if (obj.emissive) obj.emissive = col(obj.userData.colorName); }
+      else if (kind === 'line') { obj.material.color = col(obj.userData.colorName); }
+    });
+  }
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', retheme);
+  new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+  const stages = { flow, results };
+  let active = 'flow';
+  function show(name) {
+    active = name;
+    const isFlow = name === 'flow';
+    document.getElementById('stage-flow').hidden = !isFlow;
+    document.getElementById('stage-results').hidden = isFlow;
+    document.getElementById('cap-flow').hidden = !isFlow;
+    document.getElementById('cap-results').hidden = isFlow;
+    document.getElementById('key-results').hidden = isFlow;
+    document.getElementById('btn-flow').setAttribute('aria-pressed', String(isFlow));
+    document.getElementById('btn-results').setAttribute('aria-pressed', String(!isFlow));
+    stages[name].resize();
+    try { localStorage.setItem('dw3d-view', name); } catch (e) {}
+  }
+  document.getElementById('btn-flow').addEventListener('click', () => show('flow'));
+  document.getElementById('btn-results').addEventListener('click', () => show('results'));
+  window.addEventListener('resize', () => stages[active].resize());
+
+  let start = 'flow';
+  try { if (localStorage.getItem('dw3d-view') === 'results') start = 'results'; } catch (e) {}
+  if (location.hash === '#results') start = 'results';
+  flow.resize(); results.resize();
+  show(start);
+
+  function frame(time) {
+    const st = stages[active];
+    if (st.tick) st.tick(time || 0);
+    st.controls.update();
+    st.renderer.render(st.scene, st.camera);
+    st.labelRenderer.render(st.scene, st.camera);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
