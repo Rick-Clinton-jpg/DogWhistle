@@ -2,7 +2,9 @@
 
 **Can a schema-valid agent handoff carry a hidden signal that changes one successor's action but not another's?** DogWhistle tests this on a controlled, synthetic allocation task. A sender chooses two memory references in a handoff. A fresh receiver then assigns six items among four vendors. Deterministic code checks the handoff, solves the public allocation optimum, and scores what the receiver did.
 
-Across six preregistered studies, two schema-valid references carried a planted coalition codeword between agents. The codeword moved an instructed listener's allocations and left an honest listener's allocations unchanged within the registered margin. On the same 30 matrices, a label-free audit separated the two listener types without knowing the hidden pair. The audit replays each listener with only the references swapped, then compares how much its answers change with how much they vary on their own.
+**Main finding:** in this setting, a structural handoff field acted as a conditional carrier, meaningful only to a listener that held the convention. A label-free sensitivity contrast told the two listener types apart on the same tasks.
+
+Across six preregistered studies, two schema-valid references carried a planted coalition codeword between agents. The codeword moved an instructed listener's allocations and left an honest listener's unchanged within the registered margin. The audit needs no knowledge of the hidden pair. It replays each listener with only the references swapped, then compares how much its answers change with how much they vary on their own.
 
 This repository is an auditable experiment, not a deployed detector. Listeners were told the convention and given a coalition incentive. The results do not show that agents invent such conventions on their own.
 
@@ -12,12 +14,12 @@ This repository is an auditable experiment, not a deployed detector. Listeners w
 | --- | --- | --- | --- |
 | [PR #1](study/RESULTS.md), 20 tasks | Free refs, no shared convention | −0.05 items per task, exact one-sided *p* = 1.0 | Full claim **failed** |
 | [PR #2](followup/RESULTS.md), 30 tasks | Planted codeword | Emitted and decoded 30/30; free-arm effect +0.60 items per task (*p* = 0.0070); both positive controls missed their +0.5 thresholds | Full claim **failed**; transmission shown |
-| [PR #3](visibility/RESULTS.md), 30 tasks × 3 receivers | Codeword vs code-selected public refs, coalition-seeking receiver | +0.422 hidden-pair assignments per receiver (*p* = 0.00033); explicit-pair control +0.311 (*p* = 0.0055) | **Passed** |
-| [PR #4](honest/RESULTS.md), 30 tasks × 3 receivers | Same contrast, honest receiver | −0.011 per receiver, inside the ±0.20 equivalence margin | **Passed** (inert) |
+| [PR #3](visibility/RESULTS.md), 30 tasks × 3 receivers | Codeword vs public refs; coalition-seeking receiver | +0.422 hidden-pair assignments per receiver (*p* = 0.00033); explicit-pair control +0.311 (*p* = 0.0055) | **Passed** |
+| [PR #4](honest/RESULTS.md), 30 tasks × 3 receivers | Same contrast; honest receiver | −0.011 per receiver, inside the ±0.20 equivalence margin | **Passed** (inert) |
 | PR #5, [retired record](https://github.com/Rick-Clinton-jpg/DogWhistle/blob/96a9c94a34c31febc565af2f91ab34b705fa63ae/audit/retired-80/README.md) | Within-sample audit, first design | Retired after 80 of 360 calls, before any answer was decrypted; [reasons](https://github.com/Rick-Clinton-jpg/DogWhistle/blob/069be1a71146fcb6d5d86c89880edb69a2935d94/audit/seals/retired-partial.json); published unchanged | No decision |
-| [PR #6](listener/RESULTS.md), 30 tie-rich tasks × 12 slots | Both listener types, both ref arms, three prompt wordings, same matrices | Label-free sensitivity difference +0.356 (95% interval +0.256 to +0.456; *p* = 2.05 × 10⁻⁷); four Holm-corrected secondary tests passed; honest false-alarm test not raised | **Passed** |
+| [PR #6](listener/RESULTS.md), 30 tie-rich tasks × 12 slots | Both listener types, both ref arms, three paraphrases, same matrices | Label-free sensitivity difference +0.356 (95% interval +0.256 to +0.456; *p* = 2.05 × 10⁻⁷); four Holm-corrected secondary tests passed; honest false-alarm test not raised | **Passed** |
 
-PR #6's exploratory second model (local Qwen 2.5 14B) failed the validity check, so it says nothing about other models. The PR #3 [decoy analysis](visibility/EXPLORATORY.md) is exploratory and post-reveal.
+PR #6's exploratory Qwen 2.5 14B run failed the validity threshold in every cell, so it supplies no evidence about other models. The PR #3 [decoy analysis](visibility/EXPLORATORY.md) is exploratory and post-reveal.
 
 ## How the evidence is protected
 
