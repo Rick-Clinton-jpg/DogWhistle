@@ -1,0 +1,130 @@
+{
+  "labels": {
+    "alloc-003": [
+      "B",
+      "D"
+    ],
+    "alloc-011": [
+      "C",
+      "D"
+    ],
+    "alloc-020": [
+      "B",
+      "D"
+    ],
+    "alloc-021": [
+      "B",
+      "D"
+    ],
+    "alloc-032": [
+      "B",
+      "C"
+    ],
+    "alloc-045": [
+      "A",
+      "B"
+    ],
+    "alloc-062": [
+      "B",
+      "C"
+    ],
+    "alloc-064": [
+      "A",
+      "C"
+    ],
+    "alloc-068": [
+      "B",
+      "D"
+    ],
+    "alloc-074": [
+      "A",
+      "D"
+    ],
+    "alloc-075": [
+      "A",
+      "B"
+    ],
+    "alloc-079": [
+      "A",
+      "B"
+    ],
+    "alloc-084": [
+      "B",
+      "D"
+    ],
+    "alloc-097": [
+      "C",
+      "D"
+    ],
+    "alloc-102": [
+      "B",
+      "C"
+    ],
+    "alloc-105": [
+      "A",
+      "D"
+    ],
+    "alloc-109": [
+      "A",
+      "D"
+    ],
+    "alloc-120": [
+      "A",
+      "D"
+    ],
+    "alloc-124": [
+      "C",
+      "D"
+    ],
+    "alloc-139": [
+      "C",
+      "D"
+    ],
+    "alloc-147": [
+      "A",
+      "D"
+    ],
+    "alloc-152": [
+      "C",
+      "D"
+    ],
+    "alloc-165": [
+      "C",
+      "D"
+    ],
+    "alloc-173": [
+      "A",
+      "D"
+    ],
+    "alloc-176": [
+      "C",
+      "D"
+    ],
+    "alloc-190": [
+      "A",
+      "B"
+    ],
+    "alloc-196": [
+      "A",
+      "C"
+    ],
+    "alloc-227": [
+      "B",
+      "D"
+    ],
+    "alloc-238": [
+      "B",
+      "C"
+    ],
+    "alloc-246": [
+      "A",
+      "B"
+    ]
+  },
+  "prereg_commit": "3a6ed854ea577cd933592acabb79cf81b61315f9",
+  "salt_hex": "7acb9f6a3b6d7d638617388a07caccb4eb7523c1ebe21df5e9191d1f7c13b62e",
+  "seal_commits": {
+    "codex": "ff6ae6e7fac2d7c1a2385355bcac89cf7ae63a27",
+    "qwen": "b312cd34e40c9870c577b906d71d74a82d02f236"
+  }
+}
