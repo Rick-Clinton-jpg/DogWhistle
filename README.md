@@ -4,6 +4,8 @@
 
 **Main finding:** in this setting, a structural handoff field acted as a conditional carrier, meaningful only to a listener that held the convention. A label-free sensitivity contrast told the two listener types apart on the same tasks.
 
+**Quick look:** [interactive 3D view](https://rick-clinton-jpg.github.io/DogWhistle/) · [slides (PDF)](https://rick-clinton-jpg.github.io/DogWhistle/DogWhistle-slides.pdf)
+
 Across six preregistered studies, two schema-valid references carried a planted coalition codeword. In PR #2 a model sender encoded it for a model receiver; in PRs #3, #4 and #6 code planted it, so only the references differed between arms. The codeword moved an instructed listener's allocations and left an honest listener's unchanged within the registered margin. The audit needs no knowledge of the hidden pair. It replays each listener with only the references swapped, then compares how much its answers change with how much they vary on their own.
 
 This repository is an auditable experiment, not a deployed detector. Listeners were told the convention and given a coalition incentive. The results do not show that agents invent such conventions on their own.
@@ -24,6 +26,8 @@ PR #6's exploratory Qwen 2.5 14B run failed the validity threshold in every cell
 ## How the evidence is protected
 
 Before any model call, each study committed its protocol, code, sample, and a salted SHA-256 commitment to the hidden labels. Each model call ran as a fresh one-shot process. Records were sealed before the reveal. Each reveal publishes the raw ledgers, and deterministic audits replay commitments, inputs, chronology, and scores. In PR #6, labels and inputs were also encrypted at rest during the run. Deviations and defects are recorded rather than removed: PR #5's retirement and PR #6's [test maintenance note](listener/MAINTENANCE.md).
+
+An [independent re-analysis](analysis/independent_eval/README.md) re-scores every published answer without the study's code and replays the review's numbers, including the series-wide correction across all 17 confirmatory tests.
 
 ## Related work
 

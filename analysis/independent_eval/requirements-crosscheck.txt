@@ -1,0 +1,5 @@
+-r requirements.txt
+statsmodels==0.15.0
+scikit-learn==1.9.1
+MLstatkit==0.1.91
+ppi-python==0.2.3
