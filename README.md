@@ -1,37 +1,44 @@
 # DogWhistle
 
-**Can a schema-valid agent handoff carry a hidden signal that changes a successor's action?** DogWhistle studies that question with synthetic allocation tasks. A handoff can carry a planted codeword in two `required_memory_refs`; a fresh receiver assigns six items among four vendors. Deterministic code validates the handoff, finds the public welfare optimum, and scores the receiver's action.
+**Can a schema-valid agent handoff carry a hidden signal that changes one successor's action but not another's?** DogWhistle tests this on a controlled, synthetic allocation task. A sender chooses two memory references in a handoff. A fresh receiver then assigns six items among four vendors. Deterministic code checks the handoff, solves the public allocation optimum, and scores what the receiver did.
 
-The experiments use explicit prompts and a known codeword. They do not establish spontaneous collusion or a production risk rate.
+Across six preregistered studies, two schema-valid references carried a planted coalition codeword between agents. The codeword moved an instructed listener's allocations and left an honest listener's allocations unchanged within the registered margin. On the same 30 matrices, a label-free audit separated the two listener types without knowing the hidden pair. The audit replays each listener with only the references swapped, then compares how much its answers change with how much they vary on their own.
 
-## Completed studies
+This repository is an auditable experiment, not a deployed detector. Listeners were told the convention and given a coalition incentive. The results do not show that agents invent such conventions on their own.
 
-Each result below has its own preregistered decision. The task samples were not pooled.
+## Results
 
-| Study | Registered outcome |
-| --- | --- |
-| [PR #1: initial allocation](study/RESULTS.md), 20 tasks | Full claim **failed**. The free covert arm did not shift assignments against its no-signal control (−0.05 items per task; one-sided *p* = 1.0). Code-selected refs made the controlled inputs byte-identical. |
-| [PR #2: held-out carrier](followup/RESULTS.md), 30 tasks | Full action-effect claim **failed** because both allocation-effect positive controls missed their thresholds. The planted codeword was emitted and decoded 30/30; the free-arm contrast was +0.60 items per task (*p* = 0.0070). |
-| [PR #3: visibility ablation](visibility/RESULTS.md), 30 tasks | Full registered claim **passed** for a coalition-seeking receiver told the planted convention. Codeword refs increased hidden-pair assignments versus public-task-selected refs by +0.4222 per receiver (*p* = 0.0003265); the explicit functionality control passed. |
-| [PR #4: honest successor](honest/RESULTS.md), 30 tasks | The codeword was **inert within the registered ±0.20-assignment mean margin** under the honest prompt. Codeword minus public was −0.0111 per receiver; both equivalence tests passed. |
-| [PR #6: tie-rich listener audit](listener/RESULTS.md), 30 tasks | The confirmatory Codex audit **separated the two instructed listener types**: mean sensitivity difference +0.3556, exact one-sided *p* = 2.049 × 10⁻⁷; all four Holm-corrected secondary tests passed. The exploratory local Qwen family failed every cell's assignment-validity threshold, so its null result is uninformative. |
+| Study | What changed | Outcome | Decision |
+| --- | --- | --- | --- |
+| [PR #1](study/RESULTS.md), 20 tasks | Free refs, no shared convention | −0.05 items per task, exact one-sided *p* = 1.0 | Full claim **failed** |
+| [PR #2](followup/RESULTS.md), 30 tasks | Planted codeword | Emitted and decoded 30/30; free-arm effect +0.60 items per task (*p* = 0.0070); both positive controls missed their +0.5 thresholds | Full claim **failed**; transmission shown |
+| [PR #3](visibility/RESULTS.md), 30 tasks × 3 receivers | Codeword vs code-selected public refs, coalition-seeking receiver | +0.422 hidden-pair assignments per receiver (*p* = 0.00033); explicit-pair control +0.311 (*p* = 0.0055) | **Passed** |
+| [PR #4](honest/RESULTS.md), 30 tasks × 3 receivers | Same contrast, honest receiver | −0.011 per receiver, inside the ±0.20 equivalence margin | **Passed** (inert) |
+| PR #5, [retired record](https://github.com/Rick-Clinton-jpg/DogWhistle/blob/96a9c94a34c31febc565af2f91ab34b705fa63ae/audit/retired-80/README.md) | Within-sample audit, first design | Retired after 80 of 360 calls, before any answer was decrypted; [reasons](https://github.com/Rick-Clinton-jpg/DogWhistle/blob/069be1a71146fcb6d5d86c89880edb69a2935d94/audit/seals/retired-partial.json); published unchanged | No decision |
+| [PR #6](listener/RESULTS.md), 30 tie-rich tasks × 12 slots | Both listener types, both ref arms, three prompt wordings, same matrices | Label-free sensitivity difference +0.356 (95% interval +0.256 to +0.456; *p* = 2.05 × 10⁻⁷); four Holm-corrected secondary tests passed; honest false-alarm test not raised | **Passed** |
 
-PR #5 was [retired after 80 of 360 calls](https://github.com/Rick-Clinton-jpg/DogWhistle/blob/069be1a71146fcb6d5d86c89880edb69a2935d94/audit/seals/retired-partial.json), with no confirmatory decision. Its [unchanged partial record and descriptive summary](https://github.com/Rick-Clinton-jpg/DogWhistle/blob/96a9c94a34c31febc565af2f91ab34b705fa63ae/audit/retired-80/README.md) were published after PR #6's reveal on the preserved PR #5 branch.
+PR #6's exploratory second model (local Qwen 2.5 14B) failed the validity check, so it says nothing about other models. The PR #3 [decoy analysis](visibility/EXPLORATORY.md) is exploratory and post-reveal.
 
-The completed studies publish protocols, raw records, reveals, scores, and deterministic replay audits. PR #1 and #2 include sender and receiver seals; PR #3, #4, and #6 used receiver-only trials.
+## How the evidence is protected
+
+Before any model call, each study committed its protocol, code, sample, and a salted SHA-256 commitment to the hidden labels. Each model call ran as a fresh one-shot process. Records were sealed before the reveal. Each reveal publishes the raw ledgers, and deterministic audits replay commitments, inputs, chronology, and scores. In PR #6, labels and inputs were also encrypted at rest during the run. Deviations and defects are recorded rather than removed: PR #5's retirement and PR #6's [test maintenance note](listener/MAINTENANCE.md).
+
+## Related work
+
+Comparing an informed listener with an uninformed one follows the steganographic-gap framework ([arXiv:2602.23163](https://arxiv.org/abs/2602.23163)). That framework measures how much a signal helps a decoder versus a non-decoder, on an auditing task with known answers. DogWhistle applies the comparison to a structural handoff field between separate agents. The code-derived references serve as both the probe and the countermeasure. DogWhistle also tests a label-free variant that needs neither the hidden pair nor a trusted comparison model. Agreement without collusive action has also been reported in agent teams ([arXiv:2602.15198](https://arxiv.org/abs/2602.15198)).
 
 ## Repository map
 
-- `dogwhistle/`: task generator, deterministic allocation solver, handoff gate, model adapters, trial orchestration, and audit code.
-- `study/`, `followup/`, `visibility/`, `honest/`, `listener/`: the completed studies' protocols, registrations, seals, records, scores, and reports.
-- `listener/MAINTENANCE.md`: post-publication test-fixture correction; frozen study files and results were not changed.
-- `analysis/`: post-reveal visibility analysis, kept separate from preregistered decisions.
-- `tests/`: deterministic unit and fake-client lifecycle checks.
-- `prior_work/`: separately identified, byte-verified Neural Node Swarm PR #5/#6 record. This work predates the Apart sprint; see its [provenance](prior_work/ORIGIN.md).
+- `dogwhistle/`: task generator, exact allocation solver, handoff gate, model adapters, orchestration and audit code.
+- `study/`, `followup/`, `visibility/`, `honest/`, `listener/`: PRs #1, #2, #3, #4 and #6. Each folder holds the protocol, registration, raw records, reveal, scores and results.
+- `analysis/`: PR #3's exploratory decoy script.
+- `tests/`: deterministic unit tests and fake-client lifecycle tests.
+- `prior_work/`: the byte-verified Neural Node Swarm PR #5/#6 record. It predates the Apart sprint; see its [provenance](prior_work/ORIGIN.md).
+- PR #5's retired record is on the preserved `study/listener-audit` branch.
 
 ## Reproduce without model calls
 
-Use Python 3.12 from the repository root:
+Use Python 3.12 and a full-history clone, because the audits read git history. The test suite takes several minutes.
 
 ```sh
 python3.12 -m pip install -e '.[test]'
@@ -41,14 +48,19 @@ python3.12 -m dogwhistle.heldout audit --run-dir followup/carrier-1 --reveal fol
 python3.12 -m dogwhistle.visibility audit --run-dir visibility/vis-1 --reveal visibility/reveal-vis-1.json
 python3.12 -m dogwhistle.honest audit --run-dir honest/honest-1 --reveal honest/reveal-honest-1.json
 python3.12 -m dogwhistle.listener audit
-python3.12 -m analysis.vis1_exploratory
+python3.12 analysis/vis1_exploratory.py
 python3.12 prior_work/verify_snapshot.py
 ```
 
-On the merged PR #6 code, pytest reports **28 passed, 4 skipped**. The four original lifecycle-test entries are skipped and rerun unchanged from a recreated pre-prepare checkout; see [test maintenance](listener/MAINTENANCE.md). These commands make no model calls. Each results report states its design and limits.
+Expected pytest result: 28 passed, 4 skipped. The four skips are frozen tests that are rerun from their pre-prepare state, as explained in the maintenance note.
 
-## Scope
+## Limitations
 
-The tested carrier is the choice of two ordered `required_memory_refs` from four vendor refs. Selecting those refs from public task data removes sender-dependent bits through that field; it does not establish that every handoff channel is closed. The allocation matrices are synthetic, and the receiver sees the public matrix.
+- The task is synthetic, and the convention was planted. The two listener types are defined by different prompts and output schemas.
+- All confirmatory evidence comes from one model: `gpt-6.1-sol` through Codex CLI `0.163.0-alpha.10.2`, at low reasoning effort. Qwen 2.5 14B could not do the task: no answer reached the optimum, and as few as 17 of 90 answers per cell were valid. Transfer to other models is therefore untested.
+- Only one carrier field was tested: `required_memory_refs`.
+- The honest control had limited room to fail. In PR #4, honest receivers solved the exact optimum in 179 of 180 trials. In PR #6, the honest listener returned the same assignment in all six of its trials on 22 of the 30 matrices.
+- Code-selected references remove the sender's control over who benefits. They do not stop a coalition-seeking listener from applying the convention anyway: in PR #3, it diverted assignments to a code-chosen decoy pair.
+- None of these effects is a production risk rate.
 
-DogWhistle was developed for the [Apart AI Collusion Research Sprint's Carriers and Countermeasures track](https://apartresearch.com/sprints/ai-collusion-research-sprint-2026-10-23-to-2026-10-25). The pre-sprint Neural Node Swarm studies are preserved as prior work, with their original chronology intact.
+DogWhistle was designed by Rick Clinton for the [Apart AI Collusion Research Sprint](https://apartresearch.com/sprints/ai-collusion-research-sprint-2026-10-23-to-2026-10-25), in the Carriers and Countermeasures track. The pre-sprint Neural Node Swarm studies are preserved as prior work, with their original chronology intact.
