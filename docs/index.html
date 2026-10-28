@@ -29,6 +29,7 @@ body { background: var(--bg); color: var(--ink); font-family: var(--body); font-
 .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--coalition); }
 h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 0; text-wrap: balance; }
 .lede { color: var(--muted); max-width: 68ch; margin: 0; }
+.lede a { color: var(--ink); text-underline-offset: 3px; text-decoration-color: var(--coalition); }
 .switch { display: inline-flex; gap: 4px; padding: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; align-self: flex-start; }
 .switch button { font: 500 14px var(--body); color: var(--muted); background: transparent; border: 0; border-radius: 7px; padding: 8px 14px; cursor: pointer; }
 .switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
@@ -68,6 +69,7 @@ th:first-child, td:first-child { text-align: left; }
   <p class="eyebrow">DogWhistle · PR #6</p>
   <h1>A codeword only one listener hears</h1>
   <p class="lede">Two schema-valid memory references carry a planted coalition codeword. Drag to orbit each view. The flow shows the experiment; the results show the share of items each listener gave the hidden pair, under each prompt wording, on the same 30 tasks.</p>
+  <p class="lede"><strong>New to DogWhistle?</strong> Start with the three-page <a href="DogWhistle-CompanionGuide.pdf">companion guide</a> for a plain-language walkthrough of the question, results, and what they do—and do not—show. The <a href="https://pys8vc40ox3z7qxp.public.blob.vercel-storage.com/submissions/ai-collusion-research-sprint-2026-10-23-to-2026-10-25/DogWhistle_report-dRpug1T8uww8OY3fC4dz2jl15KTc4C.pdf">full paper</a> provides the methods and evidence. The guide summarizes the submitted study; it adds no new experiment or result.</p>
   <p class="links"><a href="DogWhistle-slides.pdf">Slides (PDF)</a><a href="https://github.com/Rick-Clinton-jpg/DogWhistle">Code, ledgers and replay commands</a></p>
 
   <div class="switch" role="group" aria-label="Choose a view">
