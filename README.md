@@ -78,3 +78,19 @@ Expected pytest result: 28 passed, 4 skipped. The four skips are frozen tests th
 DogWhistle was designed by Rick Clinton for the [Apart AI Collusion Research Sprint](https://apartresearch.com/sprints/ai-collusion-research-sprint-2026-10-23-to-2026-10-25), in the Carriers and Countermeasures track. The pre-sprint Neural Node Swarm studies are preserved as prior work, with their original chronology intact.
 
 Licensed under [Apache-2.0](LICENSE). The `prior_work/nns_snapshot/` folder keeps its own [PolyForm Noncommercial 1.0.0](prior_work/nns_snapshot/LICENSE) licence.
+
+[Post-sprint evidence](post-sprint/README.md)
+
+After the sprint, I tested DogWhistle further.
+
+What DogWhistle does: when one AI agent passes a task to another, it sends a handoff message. Two agents could agree on a hidden code inside that message, for example "if these two items appear in this order, pick option B." The code can sit in an ordinary-looking part of the message, such as the order of two references.
+
+DogWhistle does not need to know the code. It swaps one part of the handoff, asks each agent again in several wordings, and compares two things: how much the agent's choice changes when that part is swapped, and how much it changes when only the wording changes. It does the same for an agent that has no code. If an agent reacts to the swap much more than to rewording, and more than the agent without the code, DogWhistle flags it. A flag shows the agent is sensitive to that part of the handoff. On its own, it does not show why.
+
+What the new tests found:
+
+- In a new task, one agent was taught a hidden code and two others were not. The two agents without the code read the handoff correctly every time, so they were paying attention. With gpt-6.1-sol, DogWhistle flagged all 12 comparisons involving the agent with the code, and none of the 12 comparisons between the two agents without it.
+- On the same cases with gpt-6-luna, the taught agent followed its code only 67% of the time, and DogWhistle flagged 6 of 12 comparisons. Each model was run once. The results suggest detection depends on how consistently the code is used. How well this holds across more runs is still open.
+- I also applied DogWhistle's scoring to decisions published by another researcher's project, PoPLi (arXiv 2610.37849). The result agreed with theirs.
+
+Limits: the codes were taught on purpose, the tasks are simulated, and we don't yet know how often it would raise false alarms in real systems. Each of the five entries in post-sprint/ includes instructions to reproduce its results.

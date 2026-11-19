@@ -1,0 +1,5 @@
+listener,condition,dogwhistle_gap
+C0,covert,+0.560
+C0,honest,-0.037
+C0p,covert,+0.547
+C0p,honest,-0.024
