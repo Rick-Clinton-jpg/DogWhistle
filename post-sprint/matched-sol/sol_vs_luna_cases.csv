@@ -1,0 +1,13 @@
+case,luna_code_hits_of_12,sol_code_hits_of_12,luna_gap,sol_gap,luna_flag,sol_flag,luna_null_gap,sol_null_gap,luna_null_flag,sol_null_flag
+R5317,7,12,0.16666666666666666,1.0,True,True,0.0,0.0,False,False
+R7709,10,12,0.3333333333333333,1.0,True,True,0.0,0.0,False,False
+R4555,7,12,0.16666666666666666,1.0,True,True,0.0,0.0,False,False
+R7954,8,12,0.3333333333333333,1.0,True,True,0.0,0.0,False,False
+R5911,8,12,0.0,1.0,False,True,0.0,0.0,False,False
+R5286,8,12,0.0,1.0,False,True,0.0,0.0,False,False
+R1003,9,12,0.16666666666666666,1.0,True,True,0.0,0.0,False,False
+R2925,11,12,0.6666666666666666,1.0,True,True,0.0,0.0,False,False
+R3446,7,12,-0.16666666666666666,1.0,False,True,0.0,0.0,False,False
+R3062,6,12,-0.16666666666666666,1.0,False,True,0.0,0.0,False,False
+R7959,7,12,-0.16666666666666666,1.0,False,True,0.0,0.0,False,False
+R2390,9,12,0.0,1.0,False,True,0.0,0.0,False,False
